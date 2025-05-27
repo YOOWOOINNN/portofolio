@@ -1,254 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #c3d8f7;
-    color: #2c2828;
-    line-height: 1.6;
-  }
-  header {
-    background: linear-gradient(90deg, #3955a1, #a3b9e6);
-    color: rgb(245, 242, 239);
-    padding: 1.5rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  header .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
-    font-weight: 600;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-  }
-  nav a {
-    color: rgb(238, 227, 227);
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #c92291;
-  }
-  section {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-  }
-  h2 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    border-left: 5px solid #6f7ca8;
-    padding-left: 0.5rem;
-    color: #343538;
-  }
-  /* About */
-  #about {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  #about img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(24,40,72,0.15);
-    border: 4px solid #7880e4;
-    flex-shrink: 0;
-  }
-  #about p {
-    font-size: 1.1rem;
-    max-width: 600px;
-  }
-  /* Portfolio */
-  #portfolio .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 1.8rem;
-  }
-  #portfolio .project {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(77, 115, 190, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease;
-  }
-  #portfolio .project:hover {
-    transform: translateY(-5px);
-  }
-  #portfolio .project img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-  #portfolio .project-content {
-    padding: 1rem 1.2rem;
-    flex-grow: 1;
-  }
-  #portfolio .project-content h3 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-  }
-  #portfolio .project-content p {
-    font-size: 0.95rem;
-    color: #666;
-  }
-  /* Skills */
-  #skills ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  #skills ul li {
-    background: #74a091;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-  /* Contact */
-  #contact form {
-    max-width: 500px;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(24,40,72,0.1);
-  }
-  #contact label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-  }
-  #contact input, #contact textarea {
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  #contact input:focus, #contact textarea:focus {
-    border-color: #205854;
-    outline: none;
-  }
-  #contact button {
-    background: #5ea58a;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.6rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background 0.3s ease;
-  }
-  #contact button:hover {
-    background: #1f9454;
-  }
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: #182848;
-    color: white;
-    font-size: 0.9rem;
-  }
-  @media(max-width: 600px) {
-    header .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    #about {
-      justify-content: center;
-      text-align: center;
-    }
-    #about img {
-      margin-bottom: 1rem;
-    }
-  }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #c3d8f7;
+            color: #2c2828;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #3955a1, #a3b9e6);
+            color: rgb(245, 242, 239);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-weight: 600;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: rgb(238, 227, 227);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #c92291;
+        }
+        section {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-weight: 600;
+            margin-bottom: 3rem;
+            border-left: 5px solid #1518a7;
+            padding-left: 0.5rem;
+            color: #2f1694;
+        }
+        /* About */
+        #about {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        #about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(24,40,72,0.15);
+            border: 4px solid #7880e4;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        #about img:hover {
+            transform: scale(1.05);
+        }
+        #about p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.7rem;
+            max-width: 600px;
+        }
+        /* Portfolio */
+        #portfolio .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 1.8rem;
+        }
+        #portfolio .project {
+            background: rgb(248, 248, 248);
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(77, 115, 190, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+        #portfolio .project:hover {
+            transform: translateY(-5px);
+        }
+        #portfolio .project img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        #portfolio .project img:hover {
+            transform: scale(1.05);
+        }
+        #portfolio .project-content {
+            padding: 1rem 1.2rem;
+            flex-grow: 1;
+        }
+        #portfolio .project-content h3 {
+            margin: 0.4rem 0;
+            font-weight: 600;
+        }
+        #portfolio .project-content p {
+            font-size: 0.95rem;
+            color: #333131;
+        }
+        /* Skills */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        #skills ul li {
+            background: #74a091;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        /* Contact */
+        #contact form {
+            max-width: 500px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(24,40,72,0.1);
+        }
+        #contact label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        #contact input:focus, #contact textarea:focus {
+            border-color: #205854;
+            outline: none;
+        }
+        #contact button {
+            background: #5ea58a;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition:  0.3s ease;
+        }
+        #contact button:hover {
+            background: #1f9454;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #182848;
+            color: rgb(248, 244, 244);
+            font-size: 0.9rem;
+        }
+        @media(max-width: 600px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            #about {
+                justify-content: center;
+                text-align: center;
+            }
+            #about img {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Aulia Hanifah Herlan</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <section id="about">
-    <img src="me fr fr.jpg" alt="" />
-    <div>
-      <h2>About Me</h2>
-      <p>hallo,aku aulia,aku bisa mendesain beberapa poster,ppt.Aku juga bisa sedikit menggambar atau melukis,mungkin aku juga bisa membantu mendesain web.</p>
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="project1.png" alt="Project 1" />
-        <div class="project-content">
-          <h3>Project</h3>
-          <p>Make a simple digital clock with python.</p>
+    <header>
+        <div class="container">
+            <h1>Aulia Hanifah Herlan</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-      </div>
-      
-  </section>
+    </header>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Desain</li>
-      <li>HTml</li>
-      <li>Art</li>
-    </ul>
-  </section>
+    <section id="about">
+        <img src="me fr fr.jpg" alt="Aulia Hanifah Herlan" />
+        <div>
+            <h1>About Me</h1>
+            <p>Hallo, aku Aulia. Aku bisa mendesain beberapa poster dan PPT. Aku juga bisa sedikit menggambar atau melukis, mungkin aku juga bisa membantu mendesain web.</p>
+        </div>
+    </section>
+    <br>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="project1.png" alt="Project 1" />
+                <div class="project-content">
+                    <h3>Project 1</h3>
+                    <p>Make a simple digital clock with Python.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="art1.png" alt="Art 1" />
+                <div class="project-content">
+                    <h3>Art</h3>
+                    <p>My first original character (OC).</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! I will get back to you soon.'); this.reset();">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your Name" />
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com" />
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required placeholder="Your message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Desain</li>
+            <li>HTML</li>
+            <li>Art</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! I will get back to you soon.'); this.reset();">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Your message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Scroll animation
+        const sections = document.querySelectorAll('section');
+        const options = {
+            root: null,
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
-
